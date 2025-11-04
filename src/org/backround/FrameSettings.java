@@ -16,13 +16,14 @@ public class FrameSettings extends JFrame implements ActionListener {
 
     FrameSettings() {
 
-        this.setTitle("Zamiana koloru panelu.");
+        this.setTitle("Zamiana koloru panelu");
+        this.setSize(400, 400);
+        this.setLayout(new FlowLayout()); //ustawia komponenty jeden za drugim zamiast zastępować
+        this.setLocationRelativeTo(null);
 
         colorMap = new HashMap<>();
         initializeColorMap();
 
-        this.setSize(400, 400);
-        this.setLayout(new FlowLayout()); //ustawia komponenty jeden za drugim zamiast zastępować
 
         panel = new JPanel();
         panel.add(new JLabel("Wpisz kolor:"));
