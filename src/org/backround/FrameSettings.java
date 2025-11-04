@@ -63,7 +63,7 @@ public class FrameSettings extends JFrame implements ActionListener {
                 Color newColor = colorMap.get(color);
                 panel.setBackground(newColor);
             } else {
-                JOptionPane.showMessageDialog(this, "Nie znaleziono tego koloru.");
+                JOptionPane.showMessageDialog(this, "Nie znaleziono tego koloru.","Błąd", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
