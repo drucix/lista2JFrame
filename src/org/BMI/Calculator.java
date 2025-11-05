@@ -21,7 +21,7 @@ public class Calculator extends JFrame implements ActionListener {
 
         textFields();
 
-        button = new JButton("Oblicz");
+        button = new JButton("oblicz");
         button.addActionListener(this);
         this.add(button);
 
@@ -64,6 +64,8 @@ public class Calculator extends JFrame implements ActionListener {
                 double height = Double.parseDouble(inHeight.getText());
                 double weight = Double.parseDouble(inWeight.getText());
                 double bmi = calculateBMI(height, weight);
+                inHeight.setText(" ");
+                inWeight.setText(" ");
                 String formatBMI = String.format("%.2f", bmi);
                 resultBMI.setText("Twoje BMI: " + formatBMI);
 
