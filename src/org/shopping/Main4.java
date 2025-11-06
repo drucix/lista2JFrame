@@ -6,11 +6,15 @@ import javax.swing.*;
 
 public class Main4 {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new ShoppingList();
-            }
-        });
+        try {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new ShoppingList();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
