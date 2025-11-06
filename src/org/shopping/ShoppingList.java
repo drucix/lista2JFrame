@@ -7,7 +7,6 @@ import java.awt.event.*;
 public class ShoppingList extends JFrame implements ActionListener {
 
     private JButton add;
-    private JButton remove;
     private JPanel adding;
     private JPanel shoppingList;
     private JTextField addP;
@@ -55,11 +54,12 @@ public class ShoppingList extends JFrame implements ActionListener {
 
     private void removeProduct(){
         MouseListener mouseListener = new MouseAdapter() {
+            @Override
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount()==2){
                     int index = list.locationToIndex(e.getPoint());
-                    int input = JOptionPane.showConfirmDialog(null, "Czy chcesz usunąć ten produkt?");
-                    if(input ==0){
+                    int input = JOptionPane.showConfirmDialog(list, "Czy chcesz usunąć ten produkt?");
+                    if(input == 0){
                         listModel.removeElementAt(index);
                     }
 
